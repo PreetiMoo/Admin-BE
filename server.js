@@ -14,10 +14,10 @@ const app = express();
 
 
 app.use(cors({
-  origin: '*', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization'], 
-  credentials: true,
+  origin: ['https://admin-fe-chi.vercel.app', 'http://localhost:3000'], // List allowed origins
+  methods: ['GET', 'POST', 'PUT', 'PATCH','DELETE', 'OPTIONS'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // Allow cookies and credentials
 }));
 
 app.options('*', cors()); 
