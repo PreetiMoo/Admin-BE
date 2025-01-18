@@ -14,11 +14,12 @@ const app = express();
 
 
 app.use(cors({
-  origin: ['*','https://admin-fe-chi.vercel.app/','http://localhost:3000'], 
-  credentials: true,  
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 
-app.options('*', cors()); // Enable preflight requests for all routes
+app.options('*', cors()); 
 
 
 app.use(express.json());
