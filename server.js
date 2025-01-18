@@ -14,7 +14,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: ['https://admin-fe-chi.vercel.app/','http://localhost:3000'], 
+  origin: ['*','https://admin-fe-chi.vercel.app/','http://localhost:3000'], 
   credentials: true,  
 }));
 
