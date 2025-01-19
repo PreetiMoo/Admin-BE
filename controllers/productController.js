@@ -9,6 +9,9 @@ const addProduct = async (req, res) => {
       ...req.body,
       createdBy: req.user._id
     });
+    if(req.user.role === 'Admin'){
+      product.isAdmin = true;
+    }
     await product.save();
     res.status(201).send(product);
   } catch (error) {
