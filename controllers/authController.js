@@ -70,13 +70,13 @@ const loginUser = async (req, res) => {
       console.log("Token",token)
      
       res
-        .cookie('accessToken', token, {
-          httpOnly: true, 
-          secure: process.env.NODE_ENV === 'production', 
-          maxAge: 24 * 60 * 60 * 1000, 
-          sameSite: 'None',
-        })
-        .send({ message: 'Login successful' , user});
+        // .cookie('accessToken', token, {
+        //   httpOnly: true, 
+        //   secure: false, 
+        //   maxAge: 24 * 60 * 60 * 1000, 
+        //   sameSite: 'None',
+        // })
+        .send({ message: 'Login successful' , user, accessToken:token});
     } catch (error) {
       res.status(400).send({ error: error.message });
     }
@@ -145,8 +145,8 @@ const loginUser = async (req, res) => {
   const logoutUser = (req, res) => {
     res.clearCookie('accessToken', {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', 
-        sameSite: 'Strict', 
+        secure: false, 
+        sameSite: 'None', 
         path: '/',          
     });
     res.status(200).send({ message: 'Logout successful' });

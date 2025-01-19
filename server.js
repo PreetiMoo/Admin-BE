@@ -15,12 +15,12 @@ const app = express();
 
 app.use(cors({
   origin: ['https://admin-fe-chi.vercel.app', 'http://localhost:3000'], // List allowed origins
-  methods: ['GET', 'POST', 'PUT', 'PATCH','DELETE', 'OPTIONS'], // Allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  credentials: true, // Allow cookies and credentials
+//   // methods: ['GET', 'POST', 'PUT', 'PATCH','DELETE', 'OPTIONS'], // Allowed HTTP methods
+//   // allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+//   // credentials: true, // Allow cookies and credentials
 }));
 
-app.options('*', cors()); 
+// app.options('*', cors()); 
 
 
 app.use(express.json());
